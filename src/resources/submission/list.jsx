@@ -56,7 +56,7 @@ const submissionsExporter = ( rows, type ) => {
     return rowForExport;
   });
 
-  exporter({ rowsForExport, fields: ['id', 'formId', 'status', 'createdAt'], filename: 'submissions', type })    
+  exporter({ rowsForExport, fields: ['id', 'formName', 'status', 'createdAt'], filename: 'submissions', type })
 
 };
 
@@ -118,7 +118,7 @@ const SubmissionFilters = (props) => (
     <Filter {...props}>
         <TextInput label="Id" source="id" defaultValue=""/>
         <TextInput label="Status" source="status" defaultValue=""/>
-        <TextInput label="Form" source="formId" defaultValue=""/>
+        <TextInput label="Form" source="formName" defaultValue=""/>
     </Filter>
 );
 
@@ -136,7 +136,7 @@ export const SubmissionList = (props) => {
             >
                 <Datagrid>
                     <TextField source="id"/>
-                    <TextField source="formId"/>
+                    <TextField source="formName"/>
                     <TextField source="status"/>
                     <DateField source="createdAt"/>
                     <ShowButton basePath="/submission"/>

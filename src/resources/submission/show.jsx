@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
 };
 
 const SubmissionTitle = ({submission}) => {
-    return <span>Submission {submission ? `#${submission.id} of form "${submission.formId}"` : ''}</span>;
+    return <span>Submission {submission ? `#${submission.id} of form "${submission.formName}"` : ''}</span>;
 }
 
 const JsonField = (submission) => {
@@ -49,7 +49,7 @@ export const SubmissionShow = withRouter(connect(mapStateToProps)((props) => {
             <Tab label="Summary">
                 <TextField source="id"></TextField>
                 <DateField source="createdAt"></DateField>
-                <TextField source="formId"></TextField>
+                <TextField source="formName"></TextField>
             </Tab>
             <Tab label="Submitted data">
                 <JsonField source="submittedData"/>
